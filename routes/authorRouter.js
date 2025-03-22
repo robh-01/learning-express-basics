@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { getAuthorById } from "../controllers/authorController.js";
 
 const authorRouter = Router();
 
@@ -9,9 +10,12 @@ authorRouter.get("/", (req, res) => {
 });
 
 //this will match localhost:3000/authors/anyID123x (same here: authors part is specified by app_for_router.js)
-authorRouter.get("/:authorId", (req, res) => {
-  const { authorId } = req.params;
-  res.send(`Author ID : ${authorId}`);
-});
+// authorRouter.get("/:authorId", (req, res) => {
+//   const { authorId } = req.params;
+//   res.send(`Author ID : ${authorId}`);
+// });
 
+
+// example for controllers
+authorRouter.get("/:authorId", getAuthorById)
 export { authorRouter };
