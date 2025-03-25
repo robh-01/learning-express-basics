@@ -1,5 +1,6 @@
 import * as db from "../db.js";
 
+//this is a controller
 async function getAuthorById(req, res) {
   const { authorId } = req.params;
 
